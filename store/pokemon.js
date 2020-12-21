@@ -99,11 +99,11 @@ export const actions = {
       ctx.commit("SET_IS_LOADING", true);
       const { evolution_chain } = await this.$axios.$get(payload.species.url);
       const { chain } = await this.$axios.$get(evolution_chain.url);
-      const res = await this.$axios.$get(
-        `https://cors-anywhere.herokuapp.com/https://pokeapi.glitch.me/v1/pokemon/${payload.id}/`
-      );
+      // const res = await this.$axios.$get(
+      //   `https://cors-anywhere.herokuapp.com/https://pokeapi.glitch.me/v1/pokemon/${payload.id}/`
+      // );
 
-      ctx.commit("SET_DESCRIPTION", res[0].description);
+      // ctx.commit("SET_DESCRIPTION", res[0].description);
       ctx.commit("SET_CHAIN", chain);
       ctx.commit("SET_IS_LOADING", false);
     } catch (error) {
